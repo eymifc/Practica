@@ -16,4 +16,5 @@ public class PersonalController {
     public List<PersonalModel> getPersonal() {
         return personalRepo.findAll();
     }
+
 }
