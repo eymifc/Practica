@@ -27,7 +27,7 @@ public class PersonalController {
     public List<MteriaModel> getMateriaDataBase() {return MR.findAll();}
     //
     private final DocenteRepo DR;
-    @GetMapping("DocenteBD")// nombre en puerto
-    public List<DocenteModel> getDocenteBD() {return DR.findAll();}
+    @GetMapping("DocentBD")// nombre en puerto
+    public List<DocenteModel> getDocentBD() {return DR.findAll();}
 
 }
