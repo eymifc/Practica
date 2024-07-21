@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,13 +20,14 @@ public class DocenteModel {
     private int id;
     @Column(name= "nombre")
     private String nombre;
-    @ManyToOne
-    @JoinColumn(name = "materia_id")
-    private MteriaModel materia;;
+
     @Column(name = "grupo")
     private int grupo;
     @Column(name= "aula")
     private String aula;
     @Column(name = "estado")
     private int estado;
+
+    @OneToMany(mappedBy = "docenteModel")
+    private List<MteriaModel> MateriaList;
 }

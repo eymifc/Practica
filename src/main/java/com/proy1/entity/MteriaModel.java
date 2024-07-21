@@ -1,5 +1,6 @@
 package com.proy1.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +23,9 @@ public class MteriaModel {
     private String sigla;
     @Column(name = "estado")
     private int estado;
+
+    @ManyToOne
+    @JsonIgnore //para problemas de bucles en ls reclaciones
+    @JoinColumn(name = "docente_id")
+    private DocenteModel docenteModel;
 }
